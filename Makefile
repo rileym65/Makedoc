@@ -36,6 +36,7 @@ OBJS = \
 	processsplit.o \
 	processtable.o \
 	processtext.o \
+	processunformatted.o \
 	readline.o \
 	rtrim.o \
 	slideleft.o \

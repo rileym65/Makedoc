@@ -14,6 +14,7 @@ void processLine(char* buffer) {
     else if (strncmp(buffer,"[-]",3) == 0) buffer = processEndOfLine(buffer);
     else if (strncasecmp(buffer,"[LB",3) == 0) buffer = processList(buffer);
     else if (strncasecmp(buffer,"[TB",3) == 0) buffer = processTable(buffer);
+    else if (strncasecmp(buffer,"[LM",3) == 0) buffer = processLM(buffer);
     else if (strncasecmp(buffer,"[RM",3) == 0) buffer = processRM(buffer);
     else if (strncasecmp(buffer,"[ER",3) == 0) buffer = processEmbedded(buffer);
     else if (strncasecmp(buffer,"[EL",3) == 0) buffer = processEmbedded(buffer);
@@ -27,6 +28,7 @@ void processLine(char* buffer) {
     else if (strncasecmp(buffer,"[JF]",4) == 0) buffer = processJustify(buffer);
     else if (strncasecmp(buffer,"[JC]",4) == 0) buffer = processJustify(buffer);
     else if (strncasecmp(buffer,"[JN]",4) == 0) buffer = processJustify(buffer);
+    else if (strncasecmp(buffer,"[UB]",4) == 0) buffer = processUnformatted(buffer);
     else if (strncasecmp(buffer,"[]",2) == 0) buffer = processText(buffer);
     else {
       printf("Unknown tag found: %s%s",buffer,LE);
